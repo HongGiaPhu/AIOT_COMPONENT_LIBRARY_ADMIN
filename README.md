@@ -45,3 +45,7 @@ No framework, backend, build step or database is required.
 - Add Notion API integration.
 - Add Firebase/Supabase backend.
 - Deploy to GitHub Pages or Vercel.
+
+## Notes
+
+This is a frontend-only demo. All data is stored in the user's browser using localStorage. There is no backend or shared database.
