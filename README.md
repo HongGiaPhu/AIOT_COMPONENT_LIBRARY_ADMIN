@@ -1,5 +1,7 @@
 # AIoT Component Library Admin
 
+Demo : https://honggiaphu.github.io/AIOT_COMPONENT_LIBRARY_ADMIN/
+
 A small vanilla HTML, CSS and JavaScript web app for managing an AIoT component library for Arduino, ESP32, sensors, output modules and wiring notes.
 
 ## Features
