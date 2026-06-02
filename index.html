@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIoT Component Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="AIoT Component Library home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AIoT Library</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link active" href="index.html">Library</a>
+        <a class="button button-primary" href="admin.html">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">Component reference</p>
+        <h1>AIoT Component Library</h1>
+        <p class="lead">A small library for Arduino, ESP32, sensors, output modules and wiring notes.</p>
+      </div>
+      <div class="stat-strip" aria-label="Library summary">
+        <div>
+          <strong id="componentCount">0</strong>
+          <span>components</span>
+        </div>
+        <div>
+          <strong id="categoryCount">0</strong>
+          <span>categories</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar" aria-label="Search and filter tools">
+      <label class="search-field">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="Search component name..." autocomplete="off">
+      </label>
+
+      <div class="filter-group" aria-label="Filter by category">
+        <button class="filter-button active" type="button" data-category="All">All</button>
+        <button class="filter-button" type="button" data-category="Board">Board</button>
+        <button class="filter-button" type="button" data-category="Sensor">Sensor</button>
+        <button class="filter-button" type="button" data-category="Output">Output</button>
+        <button class="filter-button" type="button" data-category="Module">Module</button>
+        <button class="filter-button" type="button" data-category="Power">Power</button>
+        <button class="filter-button" type="button" data-category="Tool">Tool</button>
+      </div>
+    </section>
+
+    <section id="componentGrid" class="component-grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty-state" hidden>No components found.</p>
+  </main>
+
+  <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

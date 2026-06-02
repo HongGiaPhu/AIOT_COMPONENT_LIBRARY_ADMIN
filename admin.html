@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - AIoT Component Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="AIoT Component Library home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AIoT Library</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">Library</a>
+        <a class="button button-primary active" href="admin.html">Admin</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-shell admin-layout">
+    <section class="page-heading compact">
+      <div>
+        <p class="eyebrow">Data management</p>
+        <h1>Admin Panel</h1>
+      </div>
+      <a class="button button-secondary" href="index.html">Back to Library</a>
+    </section>
+
+    <section class="admin-grid">
+      <form id="componentForm" class="panel form-panel">
+        <input id="componentId" type="hidden">
+
+        <div class="form-header">
+          <h2>Component details</h2>
+          <button id="resetButton" class="button button-secondary" type="button">Reset form</button>
+        </div>
+
+        <div class="form-grid">
+          <label>
+            <span>Name</span>
+            <input id="name" name="name" type="text" required placeholder="Servo SG90">
+          </label>
+
+          <label>
+            <span>Category</span>
+            <select id="category" name="category" required>
+              <option value="Board">Board</option>
+              <option value="Sensor">Sensor</option>
+              <option value="Output">Output</option>
+              <option value="Module">Module</option>
+              <option value="Power">Power</option>
+              <option value="Tool">Tool</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Voltage</span>
+            <input id="voltage" name="voltage" type="text" required placeholder="4.8V - 6V">
+          </label>
+
+          <label>
+            <span>Pins</span>
+            <input id="pins" name="pins" type="text" required placeholder="VCC, GND, Signal">
+          </label>
+
+          <label class="span-2">
+            <span>Purpose</span>
+            <textarea id="purpose" name="purpose" rows="3" required placeholder="Controls angular position from 0 to 180 degrees."></textarea>
+          </label>
+
+          <label class="span-2">
+            <span>Common issues</span>
+            <textarea id="commonIssues" name="commonIssues" rows="3" required placeholder="Weak power supply may cause jittering."></textarea>
+          </label>
+
+          <label class="span-2">
+            <span>Example application</span>
+            <textarea id="example" name="example" rows="3" required placeholder="Mini door lock, robot arm, smart home model."></textarea>
+          </label>
+
+          <label class="span-2">
+            <span>Wiring note</span>
+            <textarea id="wiringNote" name="wiringNote" rows="3" required placeholder="VCC -> 5V, GND -> GND, Signal -> D9 on Arduino Uno."></textarea>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button id="submitButton" class="button button-primary" type="submit">Add component</button>
+          <button id="exportButton" class="button button-secondary" type="button">Export JSON</button>
+          <button id="importButton" class="button button-secondary" type="button">Import JSON</button>
+          <input id="importFile" type="file" accept="application/json,.json" hidden>
+        </div>
+      </form>
+
+      <section class="panel list-panel">
+        <div class="section-header">
+          <div>
+            <h2>Current components</h2>
+            <p id="adminCount" class="muted">0 components</p>
+          </div>
+        </div>
+        <div id="adminList" class="admin-list"></div>
+        <p id="adminEmptyState" class="empty-state small" hidden>No components found.</p>
+      </section>
+    </section>
+  </main>
+
+  <div id="messageBox" class="message-box" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
